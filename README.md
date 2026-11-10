@@ -28,17 +28,28 @@ Der ganze Ablauf mit Diagramm steht in `docs/prozess.md`.
 | `.github/` | CI und Vorlage für Pull Requests |
 
 ## Neues Projekt starten
-1. Auf GitHub bei diesem Repo "Use this template" wählen und ein neues privates Repo anlegen.
-2. Klonen und in VS Code öffnen.
-3. `git switch -c setup/start`
-4. In Claude Code `/start` eingeben. Vision beantworten und freigeben, Architektur freigeben.
-5. Die App anlegen:
+1. Auf GitHub bei diesem Repo "Use this template" wählen und ein neues privates Repo anlegen. Klonen.
+   (Besteht das Projekt-Repo schon, stattdessen die Dateien dieser Vorlage hineinkopieren, siehe Schritt 3.)
+2. Die Next.js-App in einem Hilfsordner neben dem Projekt anlegen und hineinkopieren.
+   Der Hilfsordner ist nötig, weil `create-next-app` nicht in einen Ordner mit vorhandenen Dateien schreibt.
    ```bash
-   npx create-next-app@latest . --typescript --eslint --src-dir --app
-   npm i -D @types/node@^22 vitest @vitest/coverage-v8
+   npx create-next-app@latest app-neu --typescript --eslint --src-dir --app --use-npm
+   rsync -a --exclude .git app-neu/ <Projekt>/
+   rm -rf app-neu
    ```
-6. `make check` ausführen, committen, selbst pushen, Pull Request, mergen.
-7. In den Repo-Einstellungen `main` schützen: Merge nur per Pull Request und mit grüner CI.
+3. Nur bei einem schon bestehenden Projekt-Repo: die Vorlage darüberkopieren. Die Regeln der Vorlage gewinnen.
+   ```bash
+   rsync -a --exclude .git --exclude README.md AgenticEntwicklung/ <Projekt>/
+   ```
+4. Im Projekt: `git switch -c setup/grundgeruest`, dann
+   ```bash
+   npm i -D @types/node@^22 vitest @vitest/coverage-v8
+   make check
+   ```
+5. Committen, selbst pushen, Pull Request, mergen.
+6. In den Repo-Einstellungen `main` schützen: Merge nur per Pull Request und mit grüner CI.
+7. In VS Code öffnen, neuen Branch `setup/vision` anlegen und in Claude Code `/start` eingeben.
+   Vision beantworten und freigeben, Architektur freigeben, pushen und mergen.
 
 ## Tägliche Arbeit
 1. `git switch main && git pull`

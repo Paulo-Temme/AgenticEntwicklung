@@ -8,10 +8,10 @@ typecheck:
 	npx tsc --noEmit
 
 test:
-	npx vitest run
+	npx vitest run --passWithNoTests
 
 coverage:
-	npx vitest run --coverage
+	npx vitest run --coverage --passWithNoTests
 
 check: lint typecheck test
 
