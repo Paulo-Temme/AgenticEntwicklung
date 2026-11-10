@@ -8,7 +8,7 @@ Stack: Next.js, TypeScript, Vitest.
 - Ein Orchestrator steuert fünf Rollen: architect, planner, tester, coder, reviewer.
 - Die CI prüft jeden Pull Request. SE-Eval misst pro Epic.
 
-Der ganze Ablauf mit Diagramm steht in `docs/prozess.md`.
+Neu im Team? Lies zuerst `docs/einstieg.md`. Der ganze Ablauf mit Diagramm steht in `docs/prozess.md`.
 
 ## Inhalt
 | Datei / Ordner | Zweck |
