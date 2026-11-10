@@ -21,4 +21,4 @@ Regeln:
 - Nur so viel Architektur, wie die bekannten Epics brauchen. Nichts auf Vorrat.
 - Bei einem neuen Epic: nur ergänzen, was sich ändert, und die Änderung oben im Dokument datieren.
 - Wenn ein Epic die bestehende Architektur bricht, stoppe und erkläre den Konflikt.
-- Du schreibst nur in `docs/architecture.md` und `docs/decisions/`.
+- Du schreibst nur in `docs/architecture.md` und `docs/decisions/`...
