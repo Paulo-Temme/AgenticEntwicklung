@@ -4,7 +4,18 @@ Quelle aller Epics. Wird beim Projektstart mit `/start` ausgefüllt und vom Mens
 Status: Vorlage | freigegeben am <Datum> von <Name>
 
 ## Problem
-Welches Problem löst die Anwendung, und für wen?
+Welches Problem löst die Anwendung, und für wen (Zielgruppe)?
+
+## Wertversprechen
+Was haben die Nutzerinnen und Nutzer davon, das sie heute nicht haben? Ein bis zwei Sätze.
+
+## Hypothesen
+Annahmen, auf denen die Idee beruht. Jede wird mit echten Personen geprüft.
+Status: offen · bestätigt · widerlegt, jeweils mit Feedback-ID.
+
+| ID | Annahme | Wie prüfen wir sie | Status | Beleg |
+| --- | --- | --- | --- | --- |
+| H1 | | | offen | |
 
 ## Ziele
 Woran erkennt man in drei Monaten, dass das Projekt erfolgreich war? Möglichst messbar.
@@ -19,8 +30,8 @@ Woran erkennt man in drei Monaten, dass das Projekt erfolgreich war? Möglichst 
 Mit welchen anderen Systemen, Daten oder Regeln hat die Anwendung zu tun?
 
 ## Erhebung
-Woher stammen die Anforderungen (Umfrage, Interviews, Beobachtung)? Die wichtigsten Ergebnisse in Stichpunkten,
-Rohdaten verlinken.
+Wie werden Anforderungen erhoben und geprüft (Interviews, Umfrage, Nutzertests mit Mock-up oder App)?
+Wer wird angesprochen und in welchem Abstand? Die Ergebnisse stehen im Register `docs/feedback.md`.
 
 ## Qualitätsziele
 Die drei wichtigsten Qualitätsmerkmale in Reihenfolge, mit Begründung

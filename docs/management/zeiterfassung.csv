@@ -1,0 +1,2 @@
+datum;person;stunden;feature;taetigkeit
+# Täglich ausfüllen, 15-Minuten-Raster (0,25 h). person = Name wie in Git. feature = F-Nr. oder "Sonstiges". taetigkeit: Anforderungen | Architektur | Implementierung | QA | Management. Gleiches Format wie SE-Eval.

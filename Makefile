@@ -15,4 +15,16 @@ coverage:
 
 check: lint typecheck test
 
-.PHONY: setup lint typecheck test coverage check
+build:
+	npm run build
+
+e2e:
+	npx playwright test
+
+trace:
+	node scripts/trace.mjs
+
+stats:
+	node scripts/stats.mjs
+
+.PHONY: setup lint typecheck test coverage check build e2e trace stats

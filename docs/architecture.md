@@ -7,6 +7,18 @@ Status: Vorlage | freigegeben am <Datum> von <Name>
 | Datum | Epic | Was hat sich geändert |
 | --- | --- | --- |
 
+## Notation
+Welche Sicht mit welcher Diagrammart beschrieben wird und warum. Alle Diagramme in Mermaid,
+damit sie im Repo versioniert und im Pull Request geprüft werden.
+
+| Sicht | Diagrammart | Warum diese |
+| --- | --- | --- |
+| Bausteine und Abhängigkeiten | Komponentendiagramm (Flowchart) | |
+| Abläufe zwischen Bausteinen | Sequenzdiagramm | |
+| Abläufe mit Verzweigungen, Zustände | Aktivitäts- oder Zustandsdiagramm | |
+| Struktur der Kernlogik | Klassendiagramm | |
+| Daten | ER-Diagramm | |
+
 ## Architekturtreiber
 Die Qualitätsziele aus `docs/vision.md` und was sie für den Aufbau bedeuten.
 
@@ -14,7 +26,7 @@ Die Qualitätsziele aus `docs/vision.md` und was sie für den Aufbau bedeuten.
 | --- | --- | --- |
 
 ## Stil
-Gewählter Architekturstil, Begründung, verworfene Alternative.
+Gewählter Architekturstil, Begründung, verworfene Alternative, Quelle. Verweis auf die Entscheidungsnotiz.
 
 ## Bausteine
 ```mermaid
@@ -23,10 +35,18 @@ flowchart TD
   Logik --> Daten[Datenzugriff]
 ```
 
-| Baustein | Aufgabe | Darf abhängen von |
-| --- | --- | --- |
+| Baustein | Aufgabe | Darf abhängen von | Verbirgt (Information Hiding) |
+| --- | --- | --- | --- |
 
-## Wichtigster Ablauf
+## Schnittstellen
+Was ein Baustein anderen anbietet. Alles andere ist intern.
+
+| Baustein | Funktion (Signatur) | Zweck | Fehlerfälle |
+| --- | --- | --- | --- |
+
+## Verhalten
+Je Kernablauf ein Sequenzdiagramm. Abläufe mit Verzweigungen zusätzlich als Aktivitäts- oder Zustandsdiagramm.
+
 ```mermaid
 sequenceDiagram
   participant N as Nutzer
@@ -37,11 +57,38 @@ sequenceDiagram
   L-->>U: Ergebnis
 ```
 
+## Detailentwurf
+Typen und Dienste der Kernlogik.
+
+```mermaid
+classDiagram
+  class Beispiel {
+    +id: string
+    +tueEtwas(eingabe) Ergebnis
+  }
+```
+
 ## Datenmodell
-Die wichtigsten Entitäten und ihre Beziehungen.
+```mermaid
+erDiagram
+  BEISPIEL {
+    string id PK
+  }
+```
+
+| Entität | Feld | Typ | Regel |
+| --- | --- | --- | --- |
+
+## Entwurfsprinzipien
+Wie Modularisierung, Information Hiding, lose Kopplung und hohe Kohäsion hier umgesetzt sind,
+und wo bewusst davon abgewichen wird (mit Verweis auf die Entscheidungsnotiz).
+
+## Anforderung → Realisierung
+| Story | Bausteine | Schnittstellen | Daten |
+| --- | --- | --- | --- |
 
 ## Betrieb
-Wo läuft die Anwendung, wo liegen die Daten.
+Wo läuft die Anwendung (Adresse der gehosteten Version), wo liegen die Daten, wie wird ausgeliefert.
 
 ## Risiken und offene Punkte
 -

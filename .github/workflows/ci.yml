@@ -14,10 +14,10 @@ jobs:
         run: |
           if [ -f package.json ]; then echo "vorhanden=ja" >> "$GITHUB_OUTPUT"; else echo "vorhanden=nein" >> "$GITHUB_OUTPUT"; fi
       - uses: actions/setup-node@v4
-        if: steps.app.outputs.vorhanden == 'ja'
         with:
           node-version: 22
-          cache: npm
+      - name: Nachvollziehbarkeit (zeigt Lücken, blockiert nicht)
+        run: make trace
       - run: make setup
         if: steps.app.outputs.vorhanden == 'ja'
       - run: make lint
@@ -25,4 +25,6 @@ jobs:
       - run: make typecheck
         if: steps.app.outputs.vorhanden == 'ja'
       - run: make coverage
+        if: steps.app.outputs.vorhanden == 'ja'
+      - run: make build
         if: steps.app.outputs.vorhanden == 'ja'

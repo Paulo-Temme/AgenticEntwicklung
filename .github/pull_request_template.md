@@ -1,5 +1,5 @@
 ## Story
-ID und Link zur Spec:
+ID, Ticket (`Closes #`) und Link zur Spec:
 
 ## Was wurde geändert
 
@@ -7,10 +7,14 @@ ID und Link zur Spec:
 1.
 2.
 
-## Checkliste
-- [ ] Jedes Akzeptanzkriterium hat einen Test
+## Checkliste Autorin oder Autor
+- [ ] Jedes Akzeptanzkriterium hat einen Test, `make trace` zeigt keine Lücke für diese Story
 - [ ] `make check` ist grün
-- [ ] `specs/F-XX/log.md` ist aktuell
+- [ ] `specs/F-XX/log.md` und `specs/F-XX/review.md` sind aktuell
 - [ ] Neue öffentliche Funktionen sind kommentiert
-- [ ] App von Hand ausprobiert
+- [ ] Manuelle Testfälle der Spec ausgeführt und Ergebnis eingetragen
+- [ ] Zeit in `docs/management/zeiterfassung.csv` eingetragen
+
+## Checkliste zweite Person
+- [ ] Nach `docs/review-leitfaden.md` geprüft
 - [ ] Bei Login, Rechten, Zahlungen, Datenbankschema: Code selbst gelesen
